@@ -59,7 +59,7 @@ def clickPierre():
     usr_choice = 1
     print("votre choix : ",usr_choice)
     disable()
-    
+
 def clickFeuille():
     global usr_choice
     usr_choice = 2
@@ -85,13 +85,13 @@ def jeu():
     #on affiche le score du pc
     LabelScorePc.config(text=fonctions_pfc.pc_score)
     LabelScoreJoueur.config(text=fonctions_pfc.usr_score)
-    
+
     #FIXER LA LIMITE DU SCORE POUR GAGNER -->le premier arrivé à 10 à gagner
-    if fonctions_pfc.y == 1:
+    if fonctions_pfc.y == 5:
         print("le pc a gagné la partie ! ")
         undisplay_pack_component()
         boutonEnd.pack(expand='YES')
-    elif fonctions_pfc.x == 1:
+    elif fonctions_pfc.x == 5:
         print("le joueur a gagné la partie ! ")
         undisplay_pack_component()
         boutonEnd.pack(expand='YES')
@@ -101,11 +101,11 @@ def goToZero():
     fonctions_pfc.x = 0
     fonctions_pfc.y = 0
     result = ""
-    fonctions_pfc.pc_score = " SCORE DU PC : " 
+    fonctions_pfc.pc_score = " SCORE DU PC : "
     fonctions_pfc.usr_score = " SCORE DU PC : "
 
     display_pack_component()
-    
+
 
 
 def disable():
@@ -144,7 +144,7 @@ LabelScorePc = tkinter.Label(master,fg="white",bg="#895E42",font=40)
 LabelScoreJoueur = tkinter.Label(master,fg="white",bg="#895E42",font=40)
 
 
-#PAGE ACCUEIL AVEC BOUTON JOUER 
+#PAGE ACCUEIL AVEC BOUTON JOUER
 bouttonHome = tkinter.Button(master,text="LANCER LE JEU ! ",bg="#895E42",fg="white",font=100,command=display_pack_component)
 bouttonHome.pack()
 
